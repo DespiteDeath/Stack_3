@@ -14,7 +14,7 @@ class Stack {
     size_t count() const noexcept;
     bool empty() const noexcept;
     void push(T const &) noexcept;
-    T& top() const noexcept;
+    void top() const noexcept;
     T& pop() noexcept;
     ~Stack() noexcept;
 
