@@ -115,9 +115,8 @@ size_t Stack<T>::count() const noexcept {
 }
 
 template <typename T>
-bool empty() const noexcept {
-    if (count_ == 0) return true;
-    return false;
+bool Stack<T>::empty() const noexcept {
+   return count();
 }
 
 template <typename T>
