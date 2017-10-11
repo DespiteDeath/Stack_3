@@ -97,10 +97,12 @@ void Stack<T>::push(T const &val) noexcept {
 }
 
 template <typename T>
-T& Stack<T>::pop() noexcept {
-    if(count_ == 0) throw std::runtime_error("\tStack empty...");
+void Stack<T>::pop() noexcept {
+    if(count_ == 0) {
+      throw std::runtime_error("\tStack empty...");
+    }
     --count_;
-    return top();
+    
 }
 
 template <typename T>
