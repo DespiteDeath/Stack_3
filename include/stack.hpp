@@ -66,12 +66,14 @@ Stack<T>::Stack(Stack&& u) noexcept : array_(u.array_), array_size_(u.array_size
 
 template <typename T>
 Stack<T>& Stack<T>::operator=(Stack&& u) noexcept {
+ if(this != &u) {
     count_ = u.count_;
     array_size_ = u.array_size_;
     array_ = u.array_;
     u.count_ = 0;
     u.array_size_ = 0;
     u.array_ = nullptr;
+   }
     return *this;
 }
 
