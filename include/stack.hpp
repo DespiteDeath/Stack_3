@@ -35,8 +35,8 @@ template <typename T>
 Stack<T>::Stack(size_t s) noexcept : array_size_(s), array_(new T[s]), count_(0) {}
 
 template <typename T>
-Stack<T>::Stack(const Stack& u) noexcept : array_(new T[u.array_size_]), array_size_(u.array_size_), count_(u.count_) {
-    for(int i = 0; i < count_; i++) {
+Stack<T>::Stack(const Stack& u) noexcept : delete[] array_, array_(new T[u.array_size_]), array_size_(u.array_size_), count_(u.count_) {
+    for(size_t i = 0; i < u.count_;++i) {
         array_[i] = u.array_[i];
     }
 }
