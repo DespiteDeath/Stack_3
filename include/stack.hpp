@@ -15,7 +15,7 @@ class Stack {
     bool empty() const noexcept;
     void push(T const &) noexcept;
     T& top() const noexcept;
-    T& pop() noexcept;
+    void pop() noexcept;
     ~Stack() noexcept;
 
     Stack<T>& operator=(const Stack& u) noexcept;
@@ -121,7 +121,7 @@ bool empty() const noexcept {
 }
 
 template <typename T>
-T Stack<T>::top() const noexcept {
+T& Stack<T>::top() const noexcept {
     return array_[count_];
 }
 
