@@ -117,7 +117,7 @@ bool Stack<T>::empty() const noexcept {
 }
 
 template <typename T>
-T& Stack<T>::top() const noexcept {
+T top() const noexcept {
     return array_[count_];
 }
 
